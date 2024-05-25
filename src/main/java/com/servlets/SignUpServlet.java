@@ -1,5 +1,7 @@
 package com.servlets;
 
+import com.database.SaveUser;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -7,23 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
-@WebServlet("/success")
-public class SuccessServlet extends HttpServlet {
-
+@WebServlet("/signup")
+public class SignUpServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
 
-        String username = (String) request.getAttribute("username");
-        String  password = (String) request.getAttribute("password");
+        try {
+            new SaveUser(username, password);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
-
-
-        request.setAttribute("username", username);
-        request.setAttribute("password", password);
-
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/success.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/start.jsp");
         dispatcher.forward(request, response);
     }
 }

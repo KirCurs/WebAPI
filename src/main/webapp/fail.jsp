@@ -1,17 +1,19 @@
 <%--
   Created by IntelliJ IDEA.
-  User: User
-  Date: 10.05.2024
-  Time: 13:09
+  User: New
+  Date: 25.05.2024
+  Time: 3:56
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Ошибка</title>
+    <title>Fail</title>
 </head>
 <body>
-<h1>Произошла ошибка</h1>
-<p>Пожалуйста, попробуйте еще раз позже.</p>
+<form action="start.jsp">
+    <h1>Провал</h1>
+    <button type="submit">Назад</button>
+</form>
 </body>
 </html>

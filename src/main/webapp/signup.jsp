@@ -8,10 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Log In</title>
+    <title>Sign Up</title>
 </head>
 <body>
-<form action="login" method="get">
+<form action="signup" method="get">
     <input id="username" name="username" type="text" placeholder="Ваш логин" required><br>
     <input id="password" name="password" type="password" placeholder="Пароль" required><br>
     <button type="submit">Регистрация</button>

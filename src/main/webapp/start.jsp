@@ -8,12 +8,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Success</title>
+    <title>Welcome</title>
 </head>
 <body>
-<form action="start.jsp">
-    <h1>Успешно</h1>
-    <button type="submit">Назад</button>
+<form action="login.jsp">
+    <button type="submit">Log In</button>
+</form>
+<form action="signup.jsp">
+    <button type="submit">Sign Up</button>
+</form>
+<form action="admin">
+    <button type="submit">Admin</button>
 </form>
 </body>
 </html>
